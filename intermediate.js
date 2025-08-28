@@ -41,7 +41,6 @@ console.log(triple(4))
 
 
 
-
 // 2. Higher-Order Functions
 
 /*
@@ -86,7 +85,7 @@ console.log(sum);
 
 
 
-// Callbacks - function that is passed into another function as an argument and is executed later
+// 3. Callbacks - function that is passed into another function as an argument and is executed later
 
 // fetching data might have looked like in older JavaScript. We pass a function that gets called when the data is ready (or an error occurs).
 
@@ -109,7 +108,8 @@ fetchUsersWithCallbacks((error, users) => {
 });
 
 
-// Promisess - we initiate the fetch and then chain .then() and .catch() blocks to handle success and failure, respectively
+
+// 4. Promisess - we initiate the fetch and then chain .then() and .catch() blocks to handle success and failure, respectively
 // <Promise> is an object representing the eventual completion or failure of an asynchronous operation.
 
 
@@ -131,3 +131,31 @@ fetchUsersWithPromises()
   .catch(error => {
     console.error(error);
   });
+
+
+
+// 5. Destructuring Assignment - way to 'extract values from arrays' or 'properties from objects' into distinct variables
+
+const user = { name: 'Alice', age: 30 };
+const { name, age } = user;
+
+
+
+// 6. Spread and Rest Operators - it does two very different things depending on where you use it.
+
+// Spread: expands an iterable (like an array or string) into individual elements.
+// Why Useful? - allows to easily copy arrays or objects, merge them, or pass multiple elements as individual arguments to functions.
+
+const arr1 = [1, 2, 3];
+const arr2 = [...arr1, 4, 5]; 
+
+
+// Rest: collects multiple elements or arguments into a single array.
+// Why Useful? - allows to create functions that can accept a variable number of arguments.
+
+function sumAll(...numbers) {
+  return numbers.reduce((acc, num) => acc + num, 0);
+}
+
+console.log(sumAll(1, 2, 3, 4)); // Output: 10
+console.log(sumAll(5, 10, 15));   // Output: 30
