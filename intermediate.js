@@ -87,7 +87,8 @@ console.log(sum);
 
 // 3. Callbacks - function that is passed into another function as an argument and is executed later
 
-// fetching data might have looked like in older JavaScript. We pass a function that gets called when the data is ready (or an error occurs).
+// fetching data might have looked like this in older JavaScript. 
+// We pass a function that gets called when the data is ready (or an error occurs).
 
 function fetchUsersWithCallbacks(callback) {
 
