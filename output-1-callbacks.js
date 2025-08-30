@@ -44,3 +44,30 @@ setTimeout(() => {
 
 Promise.resolve().then(() => console.log("3"));
 console.log("4");
+
+
+// 5. Mixing Promises and Callbacks
+// In what order do logs appear?
+
+setTimeout(() => console.log("X"), 0);
+
+Promise.resolve().then(() => {
+  console.log("Y");
+  setTimeout(() => console.log("Z"), 0);
+});
+
+console.log("W");
+
+
+// 6. Higher-order callback
+// What’s the sequence?
+
+function doSomething(cb) {
+  console.log("Step 1");
+  cb();
+  console.log("Step 2");
+}
+
+doSomething(() => {
+  console.log("Inside callback");
+});
