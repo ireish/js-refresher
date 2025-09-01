@@ -20,3 +20,11 @@ const colors = ['red', 'green', 'blue'];
 for (const index in colors) {
     console.log(`Index ${index}: ${colors[index]}`); // Outputs: Index 0: red, Index 1: green, Index 2: blue
 }
+
+
+// 3.forEach - executes a provided function once for each array element.
+
+const fruits = ['apple', 'banana', 'cherry'];
+fruits.forEach((fruit, index) => {
+    console.log(`Fruit at index ${index}: ${fruit}`);
+});
