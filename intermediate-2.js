@@ -28,3 +28,24 @@ const fruits = ['apple', 'banana', 'cherry'];
 fruits.forEach((fruit, index) => {
     console.log(`Fruit at index ${index}: ${fruit}`);
 });
+
+
+
+// 4. IIFE (Immediately Invoked Function Expression) - a function that runs as soon as it is defined.
+
+(function() {
+    console.log("This function runs immediately upon definition!");
+})();
+
+
+
+// 5. Currying - technique of transforming a function that takes multiple arguments into a sequence of functions that each take a single argument.
+
+function add(x) {
+    return function(y) {
+        return x + y;
+    };
+}
+
+const addFive = add(5);
+console.log(addFive(3)); // Outputs: 8

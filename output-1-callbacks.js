@@ -7,7 +7,7 @@ setTimeout(() => {
   console.log("B");
 }, 0);
 
-console.log("C");
+console.log("C" + "\n");
 
 
 // 2. Callback inside forEach
