@@ -85,7 +85,42 @@ console.log(sum);
 
 
 
-// 3. Callbacks - function that is passed into another function as an argument and is executed later
+// 3. ITERATION over collections
+
+// for ... of
+// Iterates directly over the values of iterable objects.
+
+const numbers_2 = [1, 2, 3];
+
+for (const num of numbers_2) {
+    console.log(num); // Outputs: 1, 2, 3
+}
+
+
+// for ... in
+// Iterates over the enumerable property keys (or indices) of an object.
+
+const person = { name: 'Alice', age: 30 };
+for (const key in person) {
+    console.log(`${key}: ${person[key]}`); // Outputs: name: Alice, age: 30
+}
+
+const colors = ['red', 'green', 'blue'];
+for (const index in colors) {
+    console.log(`Index ${index}: ${colors[index]}`); // Outputs: Index 0: red, Index 1: green, Index 2: blue
+}
+
+
+// forEach - executes a provided function once for each array element.
+
+const fruits = ['apple', 'banana', 'cherry'];
+fruits.forEach((fruit, index) => {
+    console.log(`Fruit at index ${index}: ${fruit}`);
+});
+
+
+
+// 4. Callbacks - function that is passed into another function as an argument and is executed later
 
 // fetching data might have looked like this in older JavaScript. 
 // We pass a function that gets called when the data is ready (or an error occurs).
@@ -110,7 +145,7 @@ fetchUsersWithCallbacks((error, users) => {
 
 
 
-// 4. Promisess - we initiate the fetch and then chain .then() and .catch() blocks to handle success and failure, respectively
+// 5. Promisess - we initiate the fetch and then chain .then() and .catch() blocks to handle success and failure, respectively
 // <Promise> is an object representing the eventual completion or failure of an asynchronous operation.
 
 
@@ -135,14 +170,14 @@ fetchUsersWithPromises()
 
 
 
-// 5. Destructuring Assignment - way to 'extract values from arrays' or 'properties from objects' into distinct variables
+// 6. Destructuring Assignment - way to 'extract values from arrays' or 'properties from objects' into distinct variables
 
 const user = { name: 'Alice', age: 30 };
 const { name, age } = user;
 
 
 
-// 6. Spread and Rest Operators - it does two very different things depending on where you use it.
+// 7. Spread and Rest Operators - it does two very different things depending on where you use it.
 
 // Spread: expands an iterable (like an array or string) into individual elements.
 // Why Useful? - allows to easily copy arrays or objects, merge them, or pass multiple elements as individual arguments to functions.
