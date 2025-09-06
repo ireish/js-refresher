@@ -5,7 +5,6 @@ a function that has access to its own scope, the outer function's scope, and the
 
 WHY?
 1. Data Privacy: allows you to create private variables and functions, which can help encapsulate functionality and avoid polluting the global scope. 
-
 2. Stateful Functions: maintain state across multiple invocations; useful for things like counters, event handlers, and more.
 */
 
