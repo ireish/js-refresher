@@ -32,3 +32,34 @@ console.log(volumeWith2And3(4)); // Outputs: 24
 
 const volumeWith2And3Fixed = curriedVolume(2)(3);
 console.log( volumeWith2And3Fixed(5) );
+
+
+
+// 3. Throttle - a technique to limit the number of times a function can be called over time.
+// Why? - useful for performance optimization, especially for events that can fire rapidly, like scrolling or resizing aw window.
+
+function handleResize(e){
+    console.log('resize happened on event: ' + e)
+}
+
+function throttle(func, delay) {
+    let throttleTimeout = null
+    return (e) => {
+        if(!throttleTimeout) {
+            func(e)
+            throttleTimeout = setTimeout( () => {
+                throttleTimeout = null
+            }, delay)
+        }
+    }
+}
+
+const throttledHandleResize = throttle(handleResize, 1000)
+window.addEventListener('resize', throttledHandleResize)
+
+// Without throttle, handleResize would be called multiple times during a single resize action, causing performance issues. 
+// With throttle, it will only be called once every second (1000 milliseconds).
+
+
+
+// 4. Debounce - a technique to ensure that a function is only called after a certain amount of time has passed since it was last invoked.
