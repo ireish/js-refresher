@@ -62,4 +62,33 @@ window.addEventListener('resize', throttledHandleResize)
 
 
 
-// 4. Debounce - a technique to ensure that a function is only called after a certain amount of time has passed since it was last invoked.
+// 4. Debounce - a technique to ensure that a function is only called after a certain period of inactivity.
+// Why? - useful for scenarios like search input, where you want to wait until the user has stopped typing before firing an event / making an API call.
+
+function debounce(func, delay) {
+    let debounceTimer
+    return function() {
+        clearTimeout(debounceTimer)
+        debounceTimer = setTimeout(()=> {
+            func.apply(this, arguments)  // .apply() ? - to preserve the context and pass arguments correctly;
+        }, delay)
+    }
+}
+
+function handleInput(e) {
+    console.log('Input detected from element with id ' + e.target.id)
+}
+
+// handleInput fires only when there has been no activity in the input field for ‘delay’ seconds. 
+document.getElementById('name-input').addEventListener('input', debounce(handleInput, 500))
+
+// Alt. way to write debounce function
+function debounce(func, delay) {
+    let debounceTimer
+    return (e) => {
+        clearTimeout(debounceTimer)
+        debounceTimer = setTimeout(()=> {
+            func(e)
+        }, delay)
+    }
+}
