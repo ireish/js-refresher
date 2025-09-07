@@ -92,3 +92,42 @@ function debounce(func, delay) {
         }, delay)
     }
 }
+
+
+
+// 5. Generators - special function that can pause and resume its execution, allowing them to produce a series of values over time, 
+// instead of computing them all at once and sending them back. 
+// Why? - useful for lazy evaluation, implementing iterators, or managing async programming.
+
+const slidesArr = [
+    "1. Intro Slide", 
+    "2. The current situation", 
+    "3. Setbacks", 
+    "4. Plans", 
+    "5. A Positive Future"
+]
+
+function* generator(arr) {
+    for (const item of arr) {
+        yield item
+    }
+}
+
+const slideGenerator = generator(slidesArr)
+
+
+// Each time next() is called, the generator resumes execution until it hits the next yield statement.
+document.getElementById('nextSlideBtn').addEventListener('click', () => {
+
+    // next() returns an object with two properties: 
+    // 1. value (the yielded value 
+    // 2. done (a boolean indicating if the generator has completed)
+
+    const result = slideGenerator.next()
+    
+    if (!result.done) {
+        console.log(result.value)   
+    } else {
+        console.log('That is the end of the presentation!')
+    }
+})
