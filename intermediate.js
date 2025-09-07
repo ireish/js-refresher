@@ -71,11 +71,10 @@ const users = [
   { name: 'Eve', age: 19 }
 ];
 
-const eligibleUsers = users.filter(users => users.age > 18)
+const eligibleUsers = users.filter(user => user.age > 18)
 
 
 // reduce(): applies a callback function against an accumulator and each element in the array (from left to right) to reduce it to a single value. 
-
 
 numbers = [1, 2, 3, 4];
 
