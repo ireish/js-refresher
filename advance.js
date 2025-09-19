@@ -36,7 +36,7 @@ console.log( volumeWith2And3Fixed(5) );
 
 
 // 3. Throttle - a technique to limit the number of times a function can be called over time.
-// Why? - useful for performance optimization, especially for events that can fire rapidly, like scrolling or resizing aw window.
+// Why? - useful for performance optimization, especially for events that can fire rapidly, like scrolling or resizing a window.
 
 function handleResize(e){
     console.log('resize happened on event: ' + e)
